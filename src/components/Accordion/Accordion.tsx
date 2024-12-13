@@ -12,7 +12,7 @@ type AccordionProps = {
     allowMultipleOpen?: boolean;
 };
 
-const Accordion: React.FC<AccordionProps> = ({ items, allowMultipleOpen = false }) => {
+const Accordion: React.FC<AccordionProps> = ({ items, allowMultipleOpen }) => {
     const [openItems, setOpenItems] = useState<string[]>([]);
 
     const toggleItem = (id: string) => {

@@ -1,35 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import Accordion from './components/Accordion/Accordion';
-import './index.css'; // Global styles for the demo
+import './index.css';
+import Content from "./components/pages/Content.tsx";
 
 const App = () => {
+
     const accordionItems = [
         {
             id: '1',
             title: 'Metadata',
-            content: <p>Content for metadata section.</p>,
+            content: <Content/>,
         },
         {
             id: '2',
             title: 'Content',
-            content: <p>Content for content section.</p>,
+            content: <Content/>,
         }
     ];
 
     return (
         <div className="app">
-            <h1>Accordion Demo</h1>
-            <Accordion items={accordionItems} />
+            <h1>VQA Reusable Accordion Demo</h1>
+            <Accordion items={accordionItems} allowMultipleOpen={true}/>
         </div>
     );
 };
 
 export default App;
-
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-);
