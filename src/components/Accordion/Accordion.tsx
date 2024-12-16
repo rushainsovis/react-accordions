@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Accordion.module.css';
+import styles from './Accordion.module.css';
 
 type AccordionItem = {
     id: string;
@@ -26,24 +26,31 @@ const Accordion: React.FC<AccordionProps> = ({ items, allowMultipleOpen }) => {
     };
 
     return (
-        <div className="accordion">
-            {items.map(({ id, title, content }) => (
-                <div key={id} className="accordion-item">
-                    <button
-                        className="accordion-header"
-                        onClick={() => toggleItem(id)}
-                        aria-expanded={openItems.includes(id)}
-                    >
-                        {title}
-                    </button>
+        <div className={styles.accordion}>
+            {items.map(({ id, title, content }) => {
+                const isOpen = openItems.includes(id);
+                return (
                     <div
-                        className={`accordion-content ${openItems.includes(id) ? 'open' : ''}`}
-                        style={{ display: openItems.includes(id) ? 'block' : 'none' }}
+                        key={id}
+                        className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}
                     >
-                        {content}
+                        <button
+                            className={styles.accordionHeader}
+                            onClick={() => toggleItem(id)}
+                            aria-expanded={isOpen}
+                        >
+                            <span className={styles.symbol}>{isOpen ? '-' : '+'}</span>
+                            <span className={styles.title}>{title}</span>
+                        </button>
+                        <div
+                            className={styles.accordionContent}
+                            style={{ display: isOpen ? 'block' : 'none' }}
+                        >
+                            {content}
+                        </div>
                     </div>
-                </div>
-            ))}
+                );
+            })}
         </div>
     );
 };
