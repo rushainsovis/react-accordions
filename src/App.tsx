@@ -19,7 +19,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <h1>VQA Reusable Accordion Demo</h1>
+            <h1>VQA</h1>
             <Accordion items={accordionItems} allowMultipleOpen={true}/>
         </div>
     );
