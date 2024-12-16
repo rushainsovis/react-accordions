@@ -41,8 +41,15 @@
 
 /* Symbol styling */
 .symbol {
-    font-size: 18px;
+    font-size: 20px; /* Slightly larger than text */
     font-weight: bold;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for animation */
+}
+
+.symbol.rotate {
+    transform: rotate(180deg); /* Animation for - symbol when accordion opens */
+    color: #007bff; /* Add color transition to indicate open state */
 }
 
 /* Title styling for consistent spacing */
@@ -59,4 +66,16 @@
     color: #333;
     background-color: #fff;
     border-top: 1px solid #ccc;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
 }

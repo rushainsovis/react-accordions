@@ -39,7 +39,11 @@ const Accordion: React.FC<AccordionProps> = ({ items, allowMultipleOpen }) => {
                             onClick={() => toggleItem(id)}
                             aria-expanded={isOpen}
                         >
-                            <span className={styles.symbol}>{isOpen ? '-' : '+'}</span>
+                            <span
+                                className={`${styles.symbol} ${isOpen ? styles.rotate : ''}`}
+                            >
+                                {isOpen ? '-' : '+'}
+                            </span>
                             <span className={styles.title}>{title}</span>
                         </button>
                         <div
