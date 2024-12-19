@@ -19,8 +19,8 @@ const App = () => {
 
     return (
         <div className="app">
-            <h1>VQA</h1>
-            <Accordion items={accordionItems} allowMultipleOpen={true}/>
+            <Accordion items={accordionItems} allowMultipleOpen={true} variant='default'/>
+            {/*<Accordion items={accordionItems} allowMultipleOpen={true} variant='alternative'/>*/}
         </div>
     );
 };
