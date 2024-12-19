@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# React Reusable Accordion Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is developed for Wiley VQA and is designed to be reusable and customizable for future purposes. The component includes two primary design variants that can be easily implemented using the variant property.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Reusable**: Designed with flexibility to be incorporated into different projects.
+- **Customizable**: Easily modify properties to fit specific design requirements.
+- **Multiple Variants**: Includes alternative and default design options for varied user experiences.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Usage Instructions
 
-- Configure the top-level `parserOptions` property like this:
+### Alternative Design
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To use the **alternative** design, specify the variant property as alternative as shown below:
+
+```angular2html
+<Accordion items={accordionItems} allowMultipleOpen={true} variant='alternative'/>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![alt text](./src/assets/git03.png)
+![alt text](./src/assets/git04.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Default Design
+
+To use the **default** design, specify the variant property as default as shown below:
+
+```angular2html
+<Accordion items={accordionItems} allowMultipleOpen={true} variant='default'/>
 ```
+
+![alt text](./src/assets/git01.png)
+![alt text](./src/assets/git02.png)
+
+## Customization
+
+You can modify the following properties:
+
+- **items**: An array of accordion items to be displayed.
+- **allowMultipleOpen**: A boolean to control whether multiple items can be expanded simultaneously.
+- **variant**: The design type, either alternative or default.

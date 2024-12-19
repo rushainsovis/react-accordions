@@ -19,8 +19,8 @@ const App = () => {
 
     return (
         <div className="app">
-            <Accordion items={accordionItems} allowMultipleOpen={true} variant='default'/>
-            {/*<Accordion items={accordionItems} allowMultipleOpen={true} variant='alternative'/>*/}
+            {/*<Accordion items={accordionItems} allowMultipleOpen={true} variant='default'/>*/}
+            <Accordion items={accordionItems} allowMultipleOpen={true} variant='alternative'/>
         </div>
     );
 };
